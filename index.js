@@ -5,6 +5,7 @@ const app=express()
 var cors=require("cors")
 var Route=require("./Routes/User-Route")
 var HomeRoute=require("./Routes/home-Route")
+var adminRoute=require("./Routes/Admin-route")
 //connect to data base
 
 ConnectToDataBase()
@@ -13,6 +14,7 @@ ConnectToDataBase()
 app.use(express.json())
 app.use("/api",Route)
 app.use("/api/",HomeRoute)
+app.use("/role",adminRoute)
 
 app.use(cors())
 
